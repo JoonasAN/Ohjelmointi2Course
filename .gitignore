@@ -1,0 +1,12 @@
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.msi
