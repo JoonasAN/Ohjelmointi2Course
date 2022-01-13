@@ -1,3 +1,5 @@
+package training.classesObjects;
+
 
 public class MemberFuntions {
 
@@ -7,8 +9,8 @@ public class MemberFuntions {
     }
 
     public static void intWrap() {
-        IntWrapper iw1 = new IntWrapper();
-        IntWrapper iw2 = new IntWrapper();
+        MFIntWrapper iw1 = new MFIntWrapper();
+        MFIntWrapper iw2 = new MFIntWrapper();
     
         for(int i = 0; i <= 5; i++){
             iw2.dec(1);
@@ -26,7 +28,7 @@ public class MemberFuntions {
 
 }
 
-class IntWrapper{
+class MFIntWrapper{
     public int val = 0;
     public void inc(int amount){
         val+=amount;

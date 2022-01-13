@@ -1,3 +1,6 @@
+package training.basics;
+
+
 import java.util.Stack;
 
 public class Basics {
