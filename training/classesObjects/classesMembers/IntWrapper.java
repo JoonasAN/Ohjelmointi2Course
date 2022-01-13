@@ -2,7 +2,7 @@ package training.classesObjects.classesMembers;
 
 class IntWrapper{
     private int val;
-    private int count;
+    private static int count;
     public IntWrapper()
     {
         val = 0;
@@ -13,7 +13,7 @@ class IntWrapper{
         val = ival;
         count++;
     }
-    public int getCount(){
+    public static int getCount(){
         return count;
     }
 }
