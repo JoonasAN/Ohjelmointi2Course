@@ -1,9 +1,9 @@
 package homework1;
 
 public class BankAccount {
-    private String accountOwner;
-    private String accountNum;
-    private double balance;
+    private String accountOwner = null;
+    private String accountNum = null;
+    private double balance = 0.0;
 
     // Constructor for bank account
     public BankAccount(String name, String accId, double balanceIn){
@@ -17,5 +17,9 @@ public class BankAccount {
         System.out.println(accountNum);
         System.out.println(balance);
     }
+
+    
+
+
 
 }
