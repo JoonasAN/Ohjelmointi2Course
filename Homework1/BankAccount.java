@@ -26,29 +26,12 @@ public class BankAccount {
     }
 
     // deposits specified amount of balance to account
-    public void deposit(String amountStr) {
-        Double amount = Double.parseDouble(amountStr);
-        if (amount > 0) {
-            this.balance += amount;
-        } else if (amount < 0) {
-            System.out.println("Can't deposit negative value!");
-        } else if (amount == 0) {
-        } else {
-            System.out.println("Something went wrong, try again.");
-        }
+    public void deposit(double amount) {
+        this.balance += amount;
     }
 
     // withdraw specified amount from account balance
-    public void withdraw(String amountStr) {
-        Double amount = Double.parseDouble(amountStr);
-        if (amount > 0 && amount <= this.balance) {
-            this.balance -= amount;
-        } else if (amount < 0) {
-            System.out.println("Can't withdraw negative value!");
-        } else if (amount > this.balance) {
-            System.out.println("Not enough balance!");
-        } else {
-            System.out.println("Something went wrong, try again.");
-        }
+    public void withdraw(double amount) {
+        this.balance -= amount;
     }
 }
