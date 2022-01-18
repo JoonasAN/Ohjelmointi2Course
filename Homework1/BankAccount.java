@@ -13,15 +13,12 @@ public class BankAccount {
     }
 
     public String getAccountNum() {
-        //System.out.println("Account Number: " + accountNum);
         return this.accountNum;
     }
     public String getAccountOwner() {
-        //System.out.println("Owner: " + accountOwner); 
         return this.accountOwner;
     }
     public Double getAccountBalance() {
-        //System.out.println("Balance: " + balance);
         return this.balance;
     }
 
