@@ -25,9 +25,10 @@ public class Building {
         // System.out.println("\n*** BUILDING INFO ***\n");
         System.out.println("Area of house:      " + this.area);
         System.out.println("Number of rooms:    " + this.rooms);
-        System.out.println("Residents: ");
+        System.out.print("Residents:");
         for (Resident resident : residents) {
             resident.printInfo();
+            System.out.print("          ");
         }
         System.out.println();
     }

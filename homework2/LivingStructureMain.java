@@ -19,8 +19,8 @@ public class LivingStructureMain {
         System.out.print("Give Name of the Plot > ");
         name = input.nextLine();
 
-        System.out.print("Give Area of the plot > ");
         do {
+            System.out.print("Give Area of the plot > ");
             area = input.nextDouble();
             input.nextLine(); // clear buffer
             if (area < 0) {

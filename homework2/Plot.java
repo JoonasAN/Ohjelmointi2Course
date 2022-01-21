@@ -47,8 +47,8 @@ public class Plot {
 
     public void printInfo() {
         System.out.println("\n\n*** PLOT INFO ***\n");
-        System.out.println("Name: " + this.name);
-        System.out.println("Area: " + this.area);
-        System.out.println("Coordinates: " + this.widthCoord + ", " + this.lenghtCoord);
+        System.out.println("Name:               " + this.name);
+        System.out.println("Area:               " + this.area);
+        System.out.println("Coordinates:        " + this.widthCoord + ", " + this.lenghtCoord);
     }
 }

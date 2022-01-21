@@ -32,6 +32,7 @@ public class Resident {
     }
 
     public void printInfo() {
-        System.out.printf("%-10s, %s \n", this.name, this.birthDate);
+        //System.out.printf("%-10s, %s \n", this.name, this.birthDate);
+        System.out.println("          "+this.name + ", "+ this.birthDate);
     }
 }
