@@ -24,9 +24,9 @@ public class Plot {
         this.name = name;
     }
 
-    public void setCoordinates(String width, String length){
-        this.widthCoord = width;
-        this.lenghtCoord = length;
+    public void setCoordinates(String widthCoord, String lenghtCoord){
+        this.widthCoord = widthCoord;
+        this.lenghtCoord = lenghtCoord;
     }
 
     public void setArea(double area){
@@ -46,7 +46,7 @@ public class Plot {
     }
 
     public void printInfo(){
-        System.out.println("\n*** PLOT INFO ***\n");
+        System.out.println("\n\n*** PLOT INFO ***\n");
         System.out.println("Name: "+this.name);
         System.out.println("Area: "+this.area);
         System.out.println("Coordinates: "+this.widthCoord+", "+this.lenghtCoord);

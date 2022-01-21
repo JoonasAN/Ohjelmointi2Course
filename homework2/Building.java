@@ -6,17 +6,12 @@ import java.util.ArrayList;
 public class Building {
     private double area;
     private int rooms;
-    private ArrayList<Resident> residents = new ArrayList<>();
+    private ArrayList<Resident> residents;
 
     public Building(double area, int rooms){
         this.area = area;
         this.rooms = rooms;
-    }
-
-    public Building(double area, int rooms, String name, String birthDate) {
-        this.area = area;
-        this.rooms = rooms;
-        this.residents.add(new Resident(name , birthDate));
+        this.residents = new ArrayList<>();
     }
 
     public void setResident(String name, String birthDate){
@@ -35,6 +30,7 @@ public class Building {
         for (Resident resident : residents) { 
             resident.printInfo();
         }
+        System.out.println();
        
     }
 
