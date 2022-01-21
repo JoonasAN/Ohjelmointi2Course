@@ -20,23 +20,32 @@ public class LivingStructureMain {
         name = input.nextLine();
 
         System.out.print("Give Area of the plot > ");
-        area = input.nextDouble();
-        input.nextLine(); //clear buffer
+        do {
+            area = input.nextDouble();
+            input.nextLine(); // clear buffer
+            if (area < 0) {
+                System.out.println("\nArea can't be negative! Try again.");
+            }
+        } while (area < 0);
 
         System.out.print("Give width coordinate > ");
         widthCoord = input.nextLine();
 
         System.out.print("Give length coordinate > ");
         lengthCoord = input.nextLine();
-        
+
         plot = new Plot(name, area, widthCoord, lengthCoord);
 
-        
         System.out.println("\n *** Add House ***");
-        
-        System.out.print("Give Area > ");
-        area = input.nextDouble();
-        input.nextLine(); // clear buffer
+
+        do {
+            System.out.print("Give Area > ");
+            area = input.nextDouble();
+            input.nextLine(); // clear buffer
+            if (area < 0) {
+                System.out.println("\nArea can't be negative! Try again.");
+            }
+        } while (area < 0);
 
         System.out.print("Give number of rooms > ");
         rooms = input.nextInt();
@@ -67,9 +76,10 @@ public class LivingStructureMain {
                     break;
             }
         } while (choice != "n");
+
         plot.printInfo();
         plot.getBuilding().printInfo();
         input.close();
     }
-        
+
 }

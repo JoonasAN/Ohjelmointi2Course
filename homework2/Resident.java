@@ -15,6 +15,14 @@ public class Resident {
         this.birthDate = birthDate;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -23,8 +31,7 @@ public class Resident {
         return this.birthDate;
     }
 
-    public void printInfo(){
-        //System.out.println(this.name + ", " + this.birthDate);
-        System.out.printf("%-10s, %s \n", this.name,this.birthDate);
+    public void printInfo() {
+        System.out.printf("%-10s, %s \n", this.name, this.birthDate);
     }
 }
