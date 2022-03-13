@@ -11,19 +11,26 @@ public class RegularSubscription extends Subscription {
                                 int rate) {
         super(journal_name, subscriber_name, delivery_address, monthly_price);
         this.rate = rate;
+        //super.setMonthlyPrice(monthly_price * rate);
+        
     }
 
-    // setter
+    // setters
     public void setRate(int rate) {
-        this.rate = rate;
+        this.rate = rate;  
     }
-
+    
     // getter
     public int getRate() {
         return this.rate;
     }
+
     public String getType() {
         return "Regular Subscription";
+    }
+
+    public double getOrderPrice() {
+        return super.getMonthlyPrice() * this.rate;
     }
     
 }

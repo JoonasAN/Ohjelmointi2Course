@@ -44,7 +44,4 @@ public class Subscription {
     public double getMonthlyPrice() {
         return this.monthly_price;
     }
-
-    
-    
 }

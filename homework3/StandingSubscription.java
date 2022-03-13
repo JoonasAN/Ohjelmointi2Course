@@ -13,9 +13,10 @@ public class StandingSubscription extends Subscription{
         super(journal_name, subscriber_name, delivery_address, monthly_price);
         this.rate = 12;
         this.discount = discount;
+        super.setMonthlyPrice( monthly_price - (monthly_price / discount) );
     }
 
-    // setter
+    // setters
     public void setDiscount(int discount) {
         this.discount = discount;
     }
@@ -24,9 +25,14 @@ public class StandingSubscription extends Subscription{
     public int getDiscount() {
         return this.discount;
     }
+    public int getRate() {
+        return this.rate;
+    }
     public String getType() {
         return "Standing Subscription";
     }
-
+    public double getOrderPrice() {
+        return super.getMonthlyPrice() * 12;
+    }
 
 }
