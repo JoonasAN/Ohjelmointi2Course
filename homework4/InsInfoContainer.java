@@ -14,7 +14,7 @@ public class InsInfoContainer {
     }
 
     public void printAll() {
-        for (InsuranceInfo info : insuranceList) {
+        for (InsuranceInfo info : this.insuranceList) {
             System.out.println("Property type:      "+info.getProperty().getType());
             System.out.println("Property Location:  "+info.getProperty().getLocation());
             System.out.println("Insurance Value:    "+info.getInsuranceValue());
@@ -23,7 +23,7 @@ public class InsInfoContainer {
     }
 
     public void printGreaterProperties(double limit) {
-        for (InsuranceInfo info : insuranceList) {
+        for (InsuranceInfo info : this.insuranceList) {
             if (info.getInsuranceValue() > limit) {
                 System.out.println("Property type:      "+info.getProperty().getType());
                 System.out.println("Property Location:  "+info.getProperty().getLocation());
@@ -35,7 +35,7 @@ public class InsInfoContainer {
     }
 
     public void printLesserProperties(double limit) {
-        for (InsuranceInfo info : insuranceList) {
+        for (InsuranceInfo info : this.insuranceList) {
             if (info.getInsuranceValue() < limit) {
                 System.out.println("Property type:      "+info.getProperty().getType());
                 System.out.println("Property Location:  "+info.getProperty().getLocation());
