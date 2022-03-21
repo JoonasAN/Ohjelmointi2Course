@@ -1,4 +1,4 @@
-package training.classesObjects.visibilities;
+package classesObjects.visibilities;
 
 public class Foo
 {

@@ -1,4 +1,4 @@
-package training.basics;
+package basics;
 
 
 import java.util.Stack;

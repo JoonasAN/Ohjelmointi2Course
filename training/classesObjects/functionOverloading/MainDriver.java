@@ -1,4 +1,4 @@
-package training.classesObjects.functionOverloading;
+package classesObjects.functionOverloading;
 
 public class MainDriver {
     public static void main(String[] args) {

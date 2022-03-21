@@ -1,4 +1,4 @@
-package training.classesObjects.classesMembers;
+package classesObjects.classesMembers;
 
 public class TheInt {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package training.classesObjects.classesMembers;
+package classesObjects.classesMembers;
 
 class IntWrapper{
     private int val;

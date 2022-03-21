@@ -1,4 +1,4 @@
-package training.exceptions;
+package exceptions;
 
 public class catchException {
     public static void main(String[] args) {

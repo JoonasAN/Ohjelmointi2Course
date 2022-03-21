@@ -1,4 +1,4 @@
-package training.inheritance.overridingDynamicBinding;
+package inheritance.overridingDynamicBinding;
 
 public class Fruit {
     

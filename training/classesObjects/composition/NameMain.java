@@ -1,4 +1,4 @@
-package training.classesObjects.composition;
+package classesObjects.composition;
 
 
 public class NameMain {

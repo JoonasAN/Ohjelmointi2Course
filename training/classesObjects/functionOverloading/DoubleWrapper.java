@@ -1,4 +1,4 @@
-package training.classesObjects.functionOverloading;
+package classesObjects.functionOverloading;
 
 /** This class Belongs to function Overloading
  */

@@ -1,4 +1,4 @@
-package training.classesObjects;
+package classesObjects;
 
 public class Members {
     
