@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Plot {
     private String name;
     private String address;
@@ -18,14 +20,6 @@ public class Plot {
         this.building = building;
     }
 
-    // public Plot(String name, String address, double area, 
-    //         int residences, int rooms, Resident resident) {
-    //     this.name = name;
-    //     this.address = address;
-    //     this.area = area;
-    //     this.building = new Building(residences, area, rooms, resident);
-    // }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -38,8 +32,8 @@ public class Plot {
         this.area = area;
     }
 
-    public void setBuilding(int residences, int rooms, Resident resident) {
-        this.building = new Building(residences, area, rooms, resident);
+    public void setBuilding(double area, Resident resident, int rooms) {
+        this.building = new Building(area, resident, rooms);
     }
 
     public String getName() {

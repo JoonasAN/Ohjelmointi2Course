@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class DetachedHouse extends Building {
     private String type; // for printInfo
 
@@ -6,17 +8,10 @@ public class DetachedHouse extends Building {
         this.type = "Detached House";
     }
 
-    public DetachedHouse(int residences, double area,
-            int rooms, Resident resident) {
-        super(residences, area, rooms, resident);
+    public DetachedHouse(double area, int rooms, Resident resident) {
+        super(area, resident, rooms);
         this.type = "Detached House";
     }
-
-    // public DetachedHouse(int residences, double area,
-    //         int rooms, Resident resident, String residentName) {
-    //     super(residences, area, rooms, residentName);
-    //     this.type = "Detached House";
-    // }
 
     public void setType(String type) {
         this.type = type;
