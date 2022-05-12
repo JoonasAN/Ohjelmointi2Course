@@ -5,15 +5,22 @@ import java.io.File;
 
 
 public class Wordlist {
-    private List<String> wordList = new ArrayList<String>();
-    private List<String> newWordList = new ArrayList<String>();
+    private List<String> wordList;
+    private List<String> newWordList;
     private Wordlist newWordlistObj;
+    private String wordIn;
+    
 
     public Wordlist(){
+        this.wordList = new ArrayList<String>();
+        this.newWordList = new ArrayList<String>();
+        this.wordIn = "";
     }
 
     public Wordlist(List<String> wordlist){
         this.wordList = wordlist; 
+        this.newWordList = new ArrayList<String>();
+        this.wordIn = "";
     }
 
     public Wordlist(String pathName) throws Exception{
@@ -22,14 +29,12 @@ public class Wordlist {
             File file = new File(pathName);
             Scanner reader = new Scanner(file);
             while (reader.hasNextLine()) {
-                String word = reader.nextLine();
-                this.wordList.add(word.toLowerCase());
+                wordIn = reader.nextLine();
+                this.wordList.add(wordIn.toLowerCase());
             }
             // System.out.println(wordList);
             reader.close();
         } catch (Exception e) {
-            // System.out.println("An Error occured: ");
-            // e.printStackTrace();
             if (e != null){
                 throw new Exception("No such file, Try again!");
             }

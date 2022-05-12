@@ -84,6 +84,7 @@ public class Main {
                     if (play.theEnd() == true) {
                         System.out.println("You Won!");
                     } else {
+                        System.out.println(play.draw());
                         System.out.println("You Lost!");
                     }
 

@@ -6,6 +6,7 @@ import java.util.Set;
 
 public class Hangman {
     private int guessesLeft;
+    private int guessesInit;
     private int wordIndex;
     private Wordlist wordlist;
     private String randomWord;
@@ -17,9 +18,10 @@ public class Hangman {
     private List<Character> guessesList;
     private Random random;
 
-    public Hangman(Wordlist wordlist, int guessesLeft) {
+    public Hangman(Wordlist wordlist, int guessesInit) {
         this.wordlist = wordlist;
-        this.guessesLeft = guessesLeft;
+        this.guessesLeft = guessesInit;
+        this.guessesInit = guessesLeft;
         this.gallows = "";
         this.random = new Random();
         this.hiddenWord = new ArrayList<>();
@@ -50,23 +52,6 @@ public class Hangman {
         else {
             this.guessesLeft--;
             this.guessesList.add(chr);
-            return false;
-        }
-    }
-
-    // easy mode
-    public boolean guessNoRepeatPenalty(Character chr) {
-        if (!guessesList.contains(chr)) {
-            if (wordChars.contains(chr)) {
-                this.guessesList.add(chr);
-                return true;
-            }
-            else {
-                this.guessesLeft--;
-                this.guessesList.add(chr);
-                return false;
-            }
-        }else {
             return false;
         }
     }
@@ -105,114 +90,118 @@ public class Hangman {
     }
 
     public String draw() {
-        switch (this.guessesLeft) {
-            case 9:
-                gallows =   "___|__________";
-                break;
+        // returns string picturing gallows if max guesses > 10
+        if (guessesInit > 9) {
+            switch (this.guessesLeft) {
+                case 9:
+                    gallows =   "___|__________";
+                    break;
 
-            case 8:
+                case 8:
 
-                gallows =   "   |/         \n"+
-                            "   |          \n"+
-                            "   |          \n"+
-                            "   |          \n"+
-                            "   |          \n"+
-                            "   |          \n"+
-                            "___|__________";
+                    gallows =   "   |/         \n"+
+                                "   |          \n"+
+                                "   |          \n"+
+                                "   |          \n"+
+                                "   |          \n"+
+                                "   |          \n"+
+                                "___|__________";
 
-                break;
+                    break;
+                    
+                case 7:
+                    gallows =   "    _______     \n"+
+                                "   |/           \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "___|__________";
+                    break;
                 
-            case 7:
-                // gallows =   "     _______\n"+gallows;
-                gallows =   "    _______     \n"+
-                            "   |/           \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "___|__________";
-                break;
-            
-            case 6:
-                gallows =   "    _______     \n"+
-                            "   |/      |    \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "___|__________";
-                break;
+                case 6:
+                    gallows =   "    _______     \n"+
+                                "   |/      |    \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "___|__________";
+                    break;
 
-            case 5:
-                gallows =   "    _______     \n"+
-                            "   |/      |    \n"+
-                            "   |      (_)   \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "___|__________";
-                break;
+                case 5:
+                    gallows =   "    _______     \n"+
+                                "   |/      |    \n"+
+                                "   |      (_)   \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "___|__________";
+                    break;
 
-            case 4:
-                gallows =   "    _______     \n"+
-                            "   |/      |    \n"+
-                            "   |      (_)   \n"+
-                            "   |       |    \n"+
-                            "   |       |    \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "___|__________";
-                break;
+                case 4:
+                    gallows =   "    _______     \n"+
+                                "   |/      |    \n"+
+                                "   |      (_)   \n"+
+                                "   |       |    \n"+
+                                "   |       |    \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "___|__________";
+                    break;
+                    
+                case 3:
+                    gallows =   "    _______     \n"+
+                                "   |/      |    \n"+
+                                "   |      (_)   \n"+
+                                "   |      /|    \n"+
+                                "   |       |    \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "___|__________";
+                    break;
                 
-            case 3:
-                gallows =   "    _______     \n"+
-                            "   |/      |    \n"+
-                            "   |      (_)   \n"+
-                            "   |      /|    \n"+
-                            "   |       |    \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "___|__________";
-                break;
-            
-            case 2:
-                gallows =   "    _______     \n"+
-                            "   |/      |    \n"+
-                            "   |      (_)   \n"+
-                            "   |      /|\\  \n"+
-                            "   |       |    \n"+
-                            "   |            \n"+
-                            "   |            \n"+
-                            "___|__________";
-                break;
+                case 2:
+                    gallows =   "    _______     \n"+
+                                "   |/      |    \n"+
+                                "   |      (_)   \n"+
+                                "   |      /|\\  \n"+
+                                "   |       |    \n"+
+                                "   |            \n"+
+                                "   |            \n"+
+                                "___|__________";
+                    break;
 
-            case 1:
-                gallows =   "    _______     \n"+
-                            "   |/      |    \n"+
-                            "   |      (_)   \n"+
-                            "   |      /|\\  \n"+
-                            "   |       |    \n"+
-                            "   |      /     \n"+
-                            "   |            \n"+
-                            "___|__________";
-                break;
-            case 0:
-                gallows =   "    _______     \n"+
-                            "   |/      |    \n"+
-                            "   |      (_)   \n"+
-                            "   |      /|\\  \n"+
-                            "   |       |    \n"+
-                            "   |      / \\  \n"+
-                            "   |            \n"+
-                            "___|__________";
-                break;
-            default:
-                break;
+                case 1:
+                    gallows =   "    _______     \n"+
+                                "   |/      |    \n"+
+                                "   |      (_)   \n"+
+                                "   |      /|\\  \n"+
+                                "   |       |    \n"+
+                                "   |      /     \n"+
+                                "   |            \n"+
+                                "___|__________";
+                    break;
+                case 0:
+                    gallows =   "    _______     \n"+
+                                "   |/      |    \n"+
+                                "   |      (_)   \n"+
+                                "   |      /|\\  \n"+
+                                "   |       |    \n"+
+                                "   |      / \\  \n"+
+                                "   |            \n"+
+                                "___|__________";
+                    break;
+                default:
+                    break;
+            }
+            return gallows;
+        } else {
+            return gallows;
         }
-        return gallows;
     }
 
     // getters and setters
