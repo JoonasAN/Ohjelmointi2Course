@@ -19,9 +19,10 @@ public class Main {
                 flag = true;
                 System.out.print("Give wordlist file > ");
                 fileName = input.nextLine();
-                wordlist = new Wordlist(fileName + ".txt");
+                wordlist = new Wordlist(fileName);
             } catch (Exception e) {
                 System.out.println("No such file, Try again!");
+                e.printStackTrace();
                 flag = false;
             }
         } while (flag == false);

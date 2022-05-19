@@ -25,9 +25,14 @@ public class Wordlist {
 
     public Wordlist(String pathName) throws Exception{
         // make list of words from file
+        this.wordList = new ArrayList<>();
+        this.newWordList = new ArrayList<String>();
+        this.wordIn = "";
         try {
+            // System.out.println(pathName);
             File file = new File(pathName);
             Scanner reader = new Scanner(file);
+
             while (reader.hasNextLine()) {
                 wordIn = reader.nextLine();
                 this.wordList.add(wordIn.toLowerCase());
@@ -35,6 +40,7 @@ public class Wordlist {
             // System.out.println(wordList);
             reader.close();
         } catch (Exception e) {
+            // e.printStackTrace();
             if (e != null){
                 throw new Exception("No such file, Try again!");
             }
